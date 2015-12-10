@@ -1,0 +1,35 @@
+default:
+    name: f8n-nginx
+    version: '1.8.0'
+    summary: A high performance web server and reverse proxy server
+    http: http://mirrors.sohu.com/nginx/nginx-1.8.0.tar.gz
+
+rpm:
+    arch: x86_64
+    release: 1.centos7
+    requires:
+        - expat >= 2.1.0
+        - fontconfig >= 2.10.95
+        - freetype >= 2.4.11
+        - gd >= 2.0.35
+        - glibc >= 2.17
+        - keyutils-libs >= 1.5.8
+        - krb5-libs >= 1.12.2
+        - libcom_err >= 1.42.9
+        - libgcrypt >= 1.5.3-12
+        - libgpg-error >= 1.12
+        - libjpeg-turbo >= 1.2.90
+        - libpng >= 1.5.13
+        - libselinux >= 2.2.2
+        - libX11 >= 1.6.0
+        - libXau >= 1.0.8
+        - libxcb >= 1.9
+        - libxml2 >= 2.9.1
+        - libXpm >= 3.5.10
+        - libxslt >= 1.1.28
+        - nss-softokn-freebl >= 3.16.2.3
+        - openssl-libs >= 1.0.1e
+        - pcre >= 8.32
+        - xz-libs >= 5.1.2
+        - zlib >= 1.2.7
+

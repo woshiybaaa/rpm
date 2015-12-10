@@ -1,0 +1,49 @@
+#!/bin/bash
+./configure --prefix=/opt/f8n/php \
+	--with-config-file-scan-dir=/opt/f8n/php/etc/php.d \
+	--disable-debug \
+	--enable-bcmath \
+	--enable-calendar \
+	--enable-ftp \
+	--enable-gd-native-ttf \
+	--enable-intl \
+	--enable-exif \
+	--enable-fpm \
+	--enable-gd-native-ttf \
+	--enable-mbregex \
+	--enable-mbstring \
+	--enable-sockets \
+	--enable-soap \
+	--enable-sysvsem \
+	--enable-sysvshm \
+	--enable-sysvmsg \
+	--enable-shmop \
+	--enable-xml \
+	--enable-zip \
+	--with-bz2 \
+	--with-curl \
+	--with-gd \
+	--with-vpx-dir=/usr \
+	--with-jpeg-dir=/usr \
+	--with-xpm-dir=/usr \
+	--with-freetype-dir=/usr \
+	--with-gettext \
+	--with-gmp \
+	--with-iconv \
+	--with-layout=GNU \
+	--with-mcrypt \
+	--with-mysql \
+	--with-mysqli \
+	--with-openssl \
+	--with-pic \
+	--with-pear \
+	--with-pdo-mysql \
+	--with-tidy \
+	--with-xsl \
+	--with-zlib
+
+CPU_N=`grep processor /proc/cpuinfo | wc -l`
+make -j $(($CPU_N + 1))
+make install INSTALL_ROOT=$DESTDIR
+cp php.ini-production $DESTDIR/opt/f8n/php/etc/php.ini
+mv $DESTDIR/opt/f8n/php/etc/php-fpm.conf.default $DESTDIR/opt/f8n/php/etc/php-fpm.conf
